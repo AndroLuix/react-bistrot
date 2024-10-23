@@ -1,24 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useGlobalContext } from './context';
+import NavBar from './components/NavBar';
+import SideBar from './components/SideBar';
+import HomeScreen from './assets/screen/HomeScreen';
+import AboutScreen from './assets/screen/AboutScreen';
+import ContaactScreen from './assets/screen/ContaactScreen';
+import SingleCocktailScreen from './assets/screen/SingleCocktailScreen';
+import ErrorScreen from './assets/screen/ErrorScreen';
+import Footer from './components/Footer';
 function App() {
+
+  const prova = useGlobalContext()
+  console.log(prova)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router className='app'>
+
+      <NavBar />
+      <SideBar />
+
+      <Routes>
+        <Route path='/' element={<HomeScreen />} />
+        <Route path='/about' element={<AboutScreen />} />
+        <Route path='/contattaci' element={<ContaactScreen />} />
+        <Route path='/cocktail/:id' element={<SingleCocktailScreen />} />
+        <Route path='/*' element={<ErrorScreen />} />
+      </Routes>
+
+      <Footer />
+      
+    </Router>
+
+
+
+
+
   );
 }
 
