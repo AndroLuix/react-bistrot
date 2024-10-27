@@ -1,8 +1,12 @@
-import { AiFillContacts, AiFillHome } from "react-icons/ai";
-import { BiFoodMenu } from "react-icons/bi";
-import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import { RiTeamLine } from "react-icons/ri";
 import React from "react";
+import { AiFillContacts, AiFillHome } from "react-icons/ai";
+import {  BiRestaurant } from "react-icons/bi";
+import { FaFacebookSquare, FaGithubSquare, FaLinkedin, FaUser } from "react-icons/fa";
+import { RiTeamLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
+
+
 
 const links = [
     {
@@ -24,17 +28,19 @@ const links = [
     {
         url: '/menu',
         text: 'Menu',
-        icon: <BiFoodMenu />
+        icon: <BiRestaurant className="nav-icon"/>
     }
 ]
 
 const LinkComponents = ({ classlink }) => {
+    const {closeSidebar} = useGlobalContext();
+
     return (
         <ul className={classlink}>
 
             {links.map((link) => {
                 return (
-                    <Link key={link.url} to={link.url} className="nav-item">
+                    <Link key={link.url} to={link.url} className="nav-item" onClick={closeSidebar}>
 
                         <div className="nav-link">
                             {link.icon}
@@ -50,38 +56,37 @@ const LinkComponents = ({ classlink }) => {
 const SocialLink = [
     {
         url: 'https://www.facebook.com/people/Tech-CraftCode/61566532360263/',
-        targer: '_blank',
+        target: '_blank',
         icon: <FaFacebookSquare className="nav-icon" />
     },
     {
         url: 'https://www.linkedin.com/in/luigi-iadicola/',
-        targer: '_blank',
+        target: '_blank',
         icon: <FaLinkedin className="nav-icon" />
     },
     {
         url: 'https://iadicola.netsons.org/',
-        targer: '_blank',
+        target: '_blank',
         icon: <FaUser className="nav-icon" />
     },
     {
         url: 'https://github.com/AndroLuix/',
-        targer: '_blank',
+        target: '_blank',
         icon: <FaGithubSquare className="nav-icon" />
     },
 
 ]
 
-const SocialComponent = ({classSocial}) => {
+const SocialComponent = ({ classSocial }) => {
     return (
         <ul className={classSocial}>
             {
-                SocialLink.map((link)=>{
+                SocialLink.map((link) => {
                     return (
                         <li key={link.url} className="nav-item">
-                            <a href={link.url} rel="noopener" target={link.targer} req>
-                                {links.icon}
+                            <a href={link.url} rel="noopener noreferrer" target={link.target}>
+                                {link.icon} 
                             </a>
-
                         </li>
                     )
                 })
@@ -90,4 +95,5 @@ const SocialComponent = ({classSocial}) => {
     )
 }
 
-export default {LinkComponents, SocialComponent};
+
+export {LinkComponents, SocialComponent};
