@@ -17,9 +17,9 @@ const Footer = () => {
        
       </div>
 
-      <div className="container " style={{color:'white'}}>
+     {/*  <div className="container " style={{color:'white'}}>
           <SocialComponent classSocial='d-flex flex-row'  />
-        </div>
+        </div> */}
 
     </footer>
   )
