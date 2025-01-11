@@ -3,8 +3,11 @@ import Hero from '../../components/Hero'
 import { backgroundAbout, backgroundTeam } from '../../utilis/images'
 import { ProjectCards, teamCards } from '../../utilis/info'
 import Card from '../../components/Card'
+import useTitle from '../../components/useTitle'
 
 const AboutScreen = () => {
+  
+  useTitle('Su di noi ')
   return (
     <>
       <Hero img={backgroundAbout}>

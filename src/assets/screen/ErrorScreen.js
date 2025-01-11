@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import animationData from '../animation/not-found.json'
+import useTitle from '../../components/useTitle';
 
 
 const Wrapper = styled.section`
@@ -23,6 +24,7 @@ h3{
 ;
 
 const ErrorScreen = () => {
+  useTitle('Errore 404')
   return (
     <Wrapper>
 

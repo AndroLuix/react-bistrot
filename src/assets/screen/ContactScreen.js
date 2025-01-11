@@ -2,8 +2,10 @@ import React from 'react'
 import Hero from '../../components/Hero'
 import { backgrounfContact } from '../../utilis/images'
 import FormContact from '../../components/FormContact'
+import useTitle from '../../components/useTitle'
 
 const ContactScreen = () => {
+  useTitle('Contattaci')
   return (
     <>
     <Hero  img={backgrounfContact} >

@@ -3,7 +3,7 @@ import React from 'react'
 const FormContact = () => {
     return (
         <div className="contact-form-container container">
-            <form action="" className="contact-form container">
+            <form action="https://formspree.io/f/xeoovazk" method='post' className="contact-form container">
                 <div className="form-group">
                     <label htmlFor="forNome">
                         Nome
@@ -43,7 +43,7 @@ const FormContact = () => {
                     <input type="text" name="ricetta" id="ricetta" className='input' placeholder='Insrisci ricetta' />
                     <hr />
                 </div>
-                <button className=" btn btn-primary">Invia</button>
+                <button type='submit' className=" btn btn-primary">Invia</button>
             </form >
         </div>
 

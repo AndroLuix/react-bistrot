@@ -14,7 +14,7 @@ import MenuScreen from './assets/screen/MenuScreen';
 function App() {
 
   const prova = useGlobalContext()
-  console.log(prova)
+  
   return (
 
     <Router className='app'>
