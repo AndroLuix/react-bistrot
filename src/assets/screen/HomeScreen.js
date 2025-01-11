@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../../components/Hero'
-import { Link, useFetcher } from 'react-router-dom'
-import Lottie from 'react-lottie'
+import { Link } from 'react-router-dom'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { FaSearch } from 'react-icons/fa';
-import useFetch from '../../components/UseFetch';
-import Card from '../../components/Card';
 import ListOfDrinks from '../../components/ListOfDrinks';
 import { useGlobalContext } from '../../context';
 import useTitle from '../../components/useTitle';

@@ -3,7 +3,6 @@ import {  FaBars } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { LinkComponents, SocialComponent } from '../utilis/links';
 import { useGlobalContext } from '../context';
-import { logoPage } from '../utilis/images';
 
 
 const NavBar = () => {

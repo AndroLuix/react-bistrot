@@ -1,5 +1,4 @@
 import React from 'react'
-import { SocialComponent } from '../utilis/links'
 
 const Footer = () => {
   return (
