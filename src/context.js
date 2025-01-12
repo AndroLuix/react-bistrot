@@ -6,7 +6,7 @@ const AppContext = createContext();
 
 const AppProvider = ({children}) => {
 
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const [scrollPosition,setScrollPosition] = useState(0);
 

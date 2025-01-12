@@ -42,7 +42,6 @@ const AboutScreen = () => {
      <section className="team-about container">
       <h3 style={{textAlign:'center', marginBottom:'10px'}}>IL NOSTRO TEAM</h3>
       <Hero img={backgroundTeam} >
-
       </Hero>
 
       <div className="card-section">

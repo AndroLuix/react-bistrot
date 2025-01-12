@@ -9,7 +9,6 @@ const SingleCocktailScreen = () => {
   const { data, loading, error } = useFetch(`${baseUrl}${id}`);
 
   
-console.log(data);
   // titolo pagina aggiornata 
   useTitle(data && data.drinks[0] ? data.drinks[0].strDrink: "Not Found")
   // Gestione del caricamento.
@@ -22,12 +21,11 @@ console.log(data);
 
   const cocktail = data.drinks[0];
 
- 
-
   return (
     <div className="single-cocktail">
       <h1>{cocktail.strDrink}</h1>
       <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} className="cocktail-image" />
+      <h3>{cocktail.strCategory}</h3>
       <h5 className="info">{cocktail.strInstructionsIT}</h5>
 
       <h3>Ingredients:</h3>

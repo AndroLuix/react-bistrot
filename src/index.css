@@ -165,6 +165,11 @@ footer .icon-btn {}
   color: var(--flickr-pink);
 }
 
+.icon-big {
+  font-size: 1.5rem ;
+  color: var(--flickr-pink);
+}
+
 .underline,
 .topline {
   position: absolute;
@@ -339,6 +344,17 @@ NAV STYLE MEDIA QUERY
     gap: 1rem;
     font-size: 1.2rem;
   }
+}
+
+.justify-content-beetwen{
+  justify-content: space-between;
+}
+.gap-3 {
+  gap: 5rem;
+}
+.ml-auto{
+  margin-left: auto !important; /* Sposta l'icona all'estrema destra */
+
 }
 
 /*
@@ -1157,8 +1173,11 @@ END FOOTER STYLE
   line-height: 1.4;
 }
 
-
-/* per cocktails */
+/*
+====================
+PER COCKTAIL
+====================
+*/
 .cocktails {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(27%, 1fr));
@@ -1260,7 +1279,9 @@ opacity: 0.8;
 
 
 /*
-Single cocktail page 
+====================
+PER SINGLE COCKTAIL
+====================
 */
 .single-cocktail {
   text-align: center;
@@ -1290,4 +1311,87 @@ Single cocktail page
 
 .single-cocktail li {
   margin: 5px 0;
+}
+
+
+/*
+====================
+PER CATEGORY MENU
+====================
+*/
+
+
+/* Container for all categories */
+.container-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Spazio tra le colonne */
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Individual category card */
+.menu-category {
+  flex: 1 1 calc(33.33% - 20px); /* 33% width with spacing */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.menu-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styling */
+.menu-category h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Image Styling */
+.menu-category img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Description Styling */
+.menu-category p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .menu-category {
+    flex: 1 1 calc(50% - 20px); /* Two columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-category {
+    flex: 1 1 100%; /* Single column for small screens */
+  }
 }
