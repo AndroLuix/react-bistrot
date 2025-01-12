@@ -30,7 +30,7 @@ useEffect(()=>{
     deleteScrollPosition();
   }
   
-  },[])
+  },[scrollPosition, deleteScrollPosition])
 
   useTitle('Pagina Home')
 
@@ -76,7 +76,7 @@ useEffect(()=>{
 
       </Hero>
 
-      {/*Lista dei drink*/}
+      
       <ListOfDrinks />
     </>
   )

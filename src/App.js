@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useGlobalContext } from './context';
@@ -13,7 +12,6 @@ import Footer from './components/Footer';
 import MenuScreen from './assets/screen/MenuScreen';
 function App() {
 
-  const prova = useGlobalContext()
   
   return (
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import axios from 'axios'; // Assumendo che stai usando Axios per le richieste HTTP.
 
 const useFetch = (url) => {

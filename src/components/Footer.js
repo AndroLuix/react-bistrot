@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container footer-container">
         <h5 className="footer-text">
           
-          all &copy; reserved to
+          
           <span className='brand-color'>
             <a href="https://iadicola.netsons.org/"> Tech CraftCode </a>
           </span>
