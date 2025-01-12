@@ -1,6 +1,6 @@
 # Visualizza prodotto
 
-Visita il sito aprendo il link:  [Apri la demo]([https://github.com/facebook/create-react-app](https://bistrot-tcc.netlify.app/)).
+Visita il sito aprendo il link:  [Apri la demo]((https://bistrot-tcc.netlify.app/)).
 
 ## descrizione
 
