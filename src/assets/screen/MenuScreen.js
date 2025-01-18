@@ -29,6 +29,7 @@ const HeroMenu = ({ backgroundMenu }) => {
 
 
 
+
 const MenuScreen = () => {
   const { data, loading, error } = useFetch(urlCategory);
   console.log(data);

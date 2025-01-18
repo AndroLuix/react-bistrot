@@ -10,6 +10,11 @@ const AppProvider = ({children}) => {
 
     const [scrollPosition,setScrollPosition] = useState(0);
 
+    const [queryInput, setQueryInput] = useState("margarita");
+    const [queryInputMeal, setQueryInputMeal] = useState("");
+
+    
+
     const openSidebar = () =>{
        return setIsSidebarOpen(true);
     }
@@ -35,6 +40,10 @@ const AppProvider = ({children}) => {
         scrollPosition,
         getScrollPosition,
         deleteScrollPosition,
+
+        queryInput, setQueryInput, // for drinks
+
+        queryInputMeal, setQueryInputMeal // for meals
         
     }}> {children} </AppContext.Provider>
 }

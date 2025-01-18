@@ -9,6 +9,7 @@ import SingleCocktailScreen from './assets/screen/SingleCocktailScreen';
 import ErrorScreen from './assets/screen/ErrorScreen';
 import Footer from './components/Footer';
 import MenuScreen from './assets/screen/MenuScreen';
+import FoodScreen from './assets/screen/FoodScreen';
 function App() {
 
   
@@ -25,6 +26,7 @@ function App() {
         <Route path='/contattaci' element={<ContactScreen />} />
         <Route path='/cocktail/:id' element={<SingleCocktailScreen />} />
         <Route path='/menu' element={<MenuScreen />} />
+        <Route path='/menu/:category' element={<FoodScreen />} />
         <Route path='/*' element={<ErrorScreen />} />
       </Routes>
 

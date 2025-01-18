@@ -5,6 +5,7 @@ import Pagination from "@mui/material/Pagination";
 import { HiClipboardList } from "react-icons/hi";
 import { useGlobalContext } from "../context";
 import { useNavigate } from "react-router-dom";
+import Drink from "./Drink";
 
 const baseUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
@@ -13,13 +14,14 @@ const Cocktails = ({ data }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [activeId, setActiveId] = useState(null); // Stato per memorizzare l'ID attivo
 
-    const {getScrollPosition} = useGlobalContext();
+    const { getScrollPosition } = useGlobalContext();
 
     const history = useNavigate();
 
-    const GoToCocktail = (cocktail) => {
-        getScrollPosition(window.pageXOffset);
-        history(`/cocktail/${cocktail.idDrink}`);
+
+    const GoToCocktail = (idDrink) => {
+        getScrollPosition(window.scrollX);
+        history(`/cocktail/${idDrink}`);
     }
 
     // Calcola quali cocktail mostrare
@@ -41,41 +43,12 @@ const Cocktails = ({ data }) => {
     return (
         <div className="cocktails">
             {cocktailsToShow.map((drink) => (
-                <div
-                    key={drink.idDrink}
-                    className="ck-id"
-                    onMouseEnter={() => showInfo(drink.idDrink)} // Passa l'ID del cocktail
-                    onMouseLeave={hideInfo} // Resetta lo stato
-                >
-                    <h3>{drink.strDrink}</h3>
-
-                    <div
-                        className="img"
-                        style={{
-                            background: `url(${drink.strDrinkThumb})`,
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                            backgroundRepeat: "no-repeat",
-                        }}
-                    >
-
-                        <div
-                            className={
-                                activeId === drink.idDrink
-                                    ? "card-text container show-info" // Mostra solo per l'elemento attivo
-                                    : "card-text container"
-                            }
-                        >
-                            <h5>{drink.strInstructionsIT.slice(0, 70)}...</h5>
-
-                            <div className="see-more-btn brand-color d-flex flex-row" 
-                            onClick={()=>GoToCocktail(drink)}>
-                                <h5>Open</h5>
-                                <HiClipboardList className="icon" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Drink key={drink.idDrink} {...drink}
+                    showInfo={showInfo}
+                    hideInfo={hideInfo}
+                    activeId={activeId}
+                    HiClipboardList={HiClipboardList}
+                    GoToCocktail={GoToCocktail} />
 
 
             ))}
@@ -92,16 +65,18 @@ const Cocktails = ({ data }) => {
 };
 
 const ListOfDrinks = () => {
-    const [input, setInput] = useState("margarita");
-    const [url, setUrl] = useState(`${baseUrl}${input}`);
+
+
+    const { setQueryInput, queryInput } = useGlobalContext();
+    const [url, setUrl] = useState(`${baseUrl}${queryInput}`);
     const { data, loading, error } = useFetch(url);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setUrl(`${baseUrl}${input}`);
+            setUrl(`${baseUrl}${queryInput}`);
         }, 500); // Delay per evitare richieste eccessive (debounce)
         return () => clearTimeout(timeout);
-    }, [input]);
+    }, [queryInput]);
 
     return (
         <section className="container home-screen">
@@ -113,8 +88,8 @@ const ListOfDrinks = () => {
                                 type="text"
                                 id="product"
                                 className="input"
-                                value={input}
-                                onChange={(e) => setInput(e.target.value)}
+                                value={queryInput}
+                                onChange={(e) => setQueryInput(e.target.value)}
                             />
 
                             <button className="btn icon-btn" type="submit">
