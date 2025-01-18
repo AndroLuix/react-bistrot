@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 
 const ListOfCategory = ({ strCategory, strCategoryDescription, strCategoryThumb }) => {
-    const navigate = useNavigate(); // Dichiara correttamente la variabile navigate
+    const navigate = useNavigate(); 
     const { getScrollPosition } = useGlobalContext();
 
     const goToCategory = (category) => {
         getScrollPosition(window.pageXOffset);
-        navigate(`/menu/${category}`); // Usa navigate per navigare
+        navigate(`/menu/${category}`); 
     };
 
     return (
