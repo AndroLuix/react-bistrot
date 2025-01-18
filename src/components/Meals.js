@@ -39,7 +39,7 @@ const Meals = ({ idMeal, strMeal, strMealThumb }) => {
 
 
     if (!data || !data.meals || data.meals.length === 0) {
-        return <h5 className="error"></h5>;
+        return <p className=""></p>;
     }
 
     const mealIngredients = ingredients(data.meals[0]);
