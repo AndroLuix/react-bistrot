@@ -1415,6 +1415,21 @@ PER CATEGORY MENU
   border-radius: 10px;
 }
 
+/* Per schermi di larghezza inferiore a 1024px (tablet) */
+@media (max-width: 1024px) {
+  .meals-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne per fila */
+  }
+}
+
+/* Per schermi di larghezza inferiore a 768px (mobile) */
+@media (max-width: 768px) {
+  .meals-container {
+    grid-template-columns: 1fr; /* 1 colonna per fila */
+  }
+}
+
+
 /* Stile per ogni piatto */
 .meal-card {
   background-color: white;
