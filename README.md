@@ -1,4 +1,4 @@
-# Visualizza Prodotto - Bistrot
+#  Bistrot
 
 Benvenuto! Questo progetto è un sito vetrina creato per un ipotetico locale, nello specifico un bistrot, con l'obiettivo di offrire un'esperienza moderna e coinvolgente.
 
