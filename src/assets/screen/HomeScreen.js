@@ -53,7 +53,7 @@ useEffect(()=>{
 
             <p>
               Qui potrai trovare una intera conoscenza internazionale di drinks a tua disposizione.
-              <span className="brand-color">Miglior Bere</span>, le ricette dei più importanti drink.
+Le ricette dei più importanti drink.
             </p>
 
             <Link to="/about" className="btn btn-primary" >
