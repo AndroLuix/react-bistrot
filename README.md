@@ -32,7 +32,7 @@ Il sito è stato progettato per rappresentare al meglio l'identità del bistrot,
   Una pagina con tutte le informazioni necessarie per contattare il locale
 
 ### 🍽 **Menu** (in lavorazione)
-  Una sezione ancora in fase di sviluppo, che conterrà un elenco completo delle pietanze e delle bevande offerte dal bistrot.
+  Una sezione dove sono disponibili diverse categorie, ogni categoria ha i suoi piatti.
 
 ---
 
